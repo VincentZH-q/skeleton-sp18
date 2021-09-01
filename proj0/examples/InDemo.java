@@ -3,7 +3,7 @@
  *  @author Josh Hug
  */
 
-public class InDemo {	
+public class InDemo {
 
 	public static void main(String[] args) {
 		if (args.length == 0) {

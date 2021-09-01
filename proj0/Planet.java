@@ -16,6 +16,9 @@ public class Planet {
 	public String imgFileName;
 	public static final double G = 6.67e-11;
 
+	public Planet() {
+	}
+
 	public Planet(double xP, double yP, double xV, double yV, double m, String img) {
 		this.xxPos = xP;
 		this.yyPos = yP;
@@ -107,6 +110,18 @@ public class Planet {
 		return yForce;
 	}
 
+
+	public String toString() {
+		return "Planet{" +
+				"xxPos=" + xxPos +
+				", yyPos=" + yyPos +
+				", xxVel=" + xxVel +
+				", yyVel=" + yyVel +
+				", mass=" + mass +
+				", imgFileName='" + imgFileName + '\'' +
+				'}';
+	}
+
 	/**
 	 *  Calculate how much the forces exerted on the planet will cause that planet 
 	 *  to accelerate, and the resulting change in the planet’s velocity 
@@ -126,7 +141,7 @@ public class Planet {
 	 */
 	public void draw() {
 		String filename = "images/" + imgFileName;
-		StdDraw.picture(xxPos, yyPos, filename);	
+		StdDraw.picture(xxPos, yyPos, filename);
 	}
 
 }
