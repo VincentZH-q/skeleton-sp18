@@ -1,6 +1,9 @@
-class NBody {
+public class NBody {
 
-	public static String imageBackgroud = "images/starfield.jpg";
+	public NBody() {
+	}
+
+	private static String imageBackgroud = "images/starfield.jpg";
 
 	public static double readRadius(String path) {
 
