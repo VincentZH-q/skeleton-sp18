@@ -5,6 +5,30 @@ import org.junit.Test;
 public class IntListTest {
 
     /**
+     * Returns the reverse of the given IntList.
+     * This method is destructive. If given null
+     * as an input, returns null.
+     */
+    @Test(timeout = 1000)
+    public void testReverse() {
+        // 1
+        IntList intList = IntList.of(1, 2 ,3);
+        IntList intList2 = IntList.of(3, 2 ,1);
+        assertEquals(intList2, IntList.reverse(intList));
+
+        //2
+        IntList intList3 = IntList.of(1);
+        IntList reverse = IntList.reverse(intList3);
+        assertNotEquals(intList3, reverse);
+
+        //3
+        IntList intList4 = null;
+        assertEquals(null, IntList.reverse(intList4));
+
+    }
+
+
+    /**
      * Example test that verifies correctness of the IntList.of static
      * method. The main point of this is to convince you that
      * assertEquals knows how to handle IntLists just fine.
@@ -59,11 +83,13 @@ public class IntListTest {
 
     @Test
     public void testCatenate() {
+        int a = 0;
         IntList A = IntList.of(1, 2, 3);
         IntList B = IntList.of(4, 5, 6);
         IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
         assertEquals(exp, IntList.catenate(A, B));
         assertEquals(IntList.of(1, 2, 3), A);
+        System.out.println(a);
     }
 
     /** If you're running this from the command line, you'll need
